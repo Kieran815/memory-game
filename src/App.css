@@ -1,38 +1,157 @@
-.App {
+.wrapper {
+  background-color: #43464b;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  overflow: auto;
+}
+
+header {
+  padding: 10px 0;
+  background-color: #168221;
+  margin-bottom: 5px;
+  box-shadow: 0 3px 6px #1b1682, 0 3px 6px #1b1682;
+  color: white;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 {
+  font-size: 30px;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header p {
+  font-weight: bold;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to left top, #168221, #1b1682) center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  height: 50px;
+  text-shadow: 0.25px 0.25px 0.25px #000000;
+  width: 100%;
+}
+
+.jumbotron p {
+  text-align: center;
+  margin: 0 0 20px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .jumbotron {
+    margin-top: 120px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media only screen and (max-width: 600px) {
+  .jumbotron {
+    margin-top: 110px;
+  }
+  .jumbotron p {
+    margin: 0;
+    font-size: 15px;
+  }
+}
+
+container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gameover {
+  z-index: 5;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 40%;
+}
+
+.deck {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  overflow: auto;
+}
+
+.card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: purple;
+  color: #fff;
+  border-radius: 2px;
+  margin: 40px 20px;
+  padding: 5px;
+  position: relative;
+  height: 20em;
+  width: 250px;
+  box-shadow: 0 3px 6px #1b1682, 0 3px 6px #821a16;
+  transition: box-shadow 0.1s ease-in-out;
+  text-align: left;
+}
+
+
+.card:hover {
+  box-shadow: 0 12px 24px #999, 0 12px 24px #999;
+  height: 300px;
+  width: 250;
+}
+
+.card>button {
   color: white;
+  background-color: #168221;
+  height: 30%;
+  margin: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.card>.img-container {
+  height: 80%;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.card>.img-container>img {
+  width: 80%
+}
+
+.card>.content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 15px;
+  background: #6CADDC;
+}
+
+.card>.img-content>ul {
+  list-style-type: none;
+}
+
+.animate {
+  animation: shake 0.5s;
+}
+
+@media only screen and (max-width: 600px) {
+  .card:hover {
+    height: 300px;
+    width: 250px;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   }
 }
